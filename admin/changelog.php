@@ -8,8 +8,7 @@
 * RSGallery is Free Software
 **/
 
-// no direct access
-defined( '_JEXEC' ) or die( 'Restricted access' );
+defined('_JEXEC') or die;
 ?>
 
 Check for the latest version of RSGallery2 at http://www.rsgallery2.nl/

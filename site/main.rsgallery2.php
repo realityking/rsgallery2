@@ -7,7 +7,8 @@
 * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL
 * RSGallery is Free Software
 */
-defined( '_JEXEC' ) or die( 'Access Denied.' );
+
+defined('_JEXEC') or die;
 
 /**
  * this is the primary and default function

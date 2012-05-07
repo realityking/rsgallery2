@@ -9,8 +9,7 @@
 * RSGallery is Free Software
 */
 
-defined( '_JEXEC' ) or die( 'Direct Access to this location is not allowed.' );
-
+defined('_JEXEC') or die;
 
 /**
 * The HTML_RSGALLERY class is used to encapsulate the HTML processing for RSGallery.

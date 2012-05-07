@@ -7,8 +7,7 @@
 * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL
 **/
 
-// ensure this file is being included by a parent file
-defined( '_JEXEC' ) or die( 'Direct Access to this location is not allowed.' );
+defined('_JEXEC') or die;
 
 // RSG2 is a metacomponent.  joomla calls components options, RSG2 calls it's components rsgOptions
 if( isset( $_REQUEST['rsgOption'] ))
