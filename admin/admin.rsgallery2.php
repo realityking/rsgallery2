@@ -317,11 +317,11 @@ function save_batchuploadX() {
         //If image is marked for deletion, delete and continue with next iteration
         if (isset($delete[$i]) AND ($delete[$i] == 'true')) {
             //Delete file from server
-            unlink(JPATH_ROOT.DS."media".DS.$extractdir.DS.$filename[$i]);
+            unlink(JPATH_ROOT . "/media/" . $extractdir . '/' . $filename[$i]);
             continue;
         } else {
             //Setting variables for importImage()
-            $imgTmpName = JPATH_ROOT.DS."media".DS.$extractdir.DS.$filename[$i];
+            $imgTmpName = JPATH_ROOT . "/media/" . $extractdir . '/' . $filename[$i];
             $imgName 	= $filename[$i];
             $imgCat	 	= $category[$i];
             $imgTitle 	= $ptitle[$i];

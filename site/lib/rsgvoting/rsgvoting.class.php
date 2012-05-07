@@ -19,8 +19,9 @@ class rsgVoting {
     	global $rsgConfig;
     	if ($rsgConfig->get('voting')) {
 			$item = rsgInstance::getItem();
+
 			$id = $item->id;
-			require_once(JPATH_RSGALLERY2_SITE . DS . 'lib' . DS . 'rsgvoting' . DS .'tmpl' . DS . 'form.php');
+			require_once(JPATH_RSGALLERY2_SITE . '/lib/rsgvoting/tmpl/form.php');
 	    }
     }
 
@@ -55,8 +56,9 @@ class rsgVoting {
 	
 	function showScore() {
 		$item = rsgInstance::getItem();
+
 		$id = $item->id;
-		require_once(JPATH_RSGALLERY2_SITE . DS . 'lib' . DS . 'rsgvoting' . DS .'tmpl' . DS . 'result.php');
+		require_once(JPATH_RSGALLERY2_SITE . '/lib/rsgvoting/tmpl/result.php');
 	}
 	/**
 	 * Check if the user already voted for this item

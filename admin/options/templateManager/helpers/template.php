@@ -52,11 +52,11 @@ class TemplatesHelper
 	function parseXMLTemplateFile($templateBaseDir, $templateDir)
 	{
 		// Check of the xml file exists
-		if(!is_file($templateBaseDir.DS.$templateDir.DS.'templateDetails.xml')) {
+		if(!is_file($templateBaseDir . '/' . $templateDir . '/templateDetails.xml')) {
 			return false;
 		}
 		
-		$xml = JApplicationHelper::parseXMLInstallFile($templateBaseDir.DS.$templateDir.DS.'templateDetails.xml');
+		$xml = JApplicationHelper::parseXMLInstallFile($templateBaseDir . '/' . $templateDir . '/templateDetails.xml');
 		
 		if ($xml['type'] != 'rsgTemplate') {
 			return false;

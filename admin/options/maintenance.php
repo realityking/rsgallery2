@@ -194,9 +194,9 @@ function createImages() {
 	}
 	
 	//Just for readability of code
-	$original = JPATH_ORIGINAL . DS . $name;
-	$display  = JPATH_DISPLAY . DS . imgUtils::getImgNameDisplay($name);
-	$thumb    = JPATH_THUMB . DS . imgUtils::getImgNameThumb($name);
+	$original = JPATH_ORIGINAL . '/' . $name;
+	$display  = JPATH_DISPLAY . '/' . imgUtils::getImgNameDisplay($name);
+	$thumb    = JPATH_THUMB . '/' . imgUtils::getImgNameThumb($name);
 	
 	//If only thumb exists, no generation possible so redirect.
 	if (!file_exists($original) AND !file_exists($display) AND file_exists($thumb) ) {
@@ -280,9 +280,9 @@ function regenerateImage() {
 	}
 	
 	//Just for readability of code
-	$original = JPATH_ORIGINAL . DS . $name;
-	$display  = JPATH_DISPLAY . DS . imgUtils::getImgNameDisplay($name);
-	$thumb    = JPATH_THUMB . DS . imgUtils::getImgNameThumb($name);
+	$original = JPATH_ORIGINAL . '/' . $name;
+	$display  = JPATH_DISPLAY . '/' . imgUtils::getImgNameDisplay($name);
+	$thumb    = JPATH_THUMB . '/' . imgUtils::getImgNameThumb($name);
 	    
 	if ( file_exists($original) ) {
 		//Check if display image exists, if not make it.
@@ -309,7 +309,7 @@ function optimizeDB() {
 	global $mainframe;
 	$database =& JFactory::getDBO();
 	
-	require_once(JPATH_ROOT . DS . "administrator" . DS . "components" . DS . "com_rsgallery2" . DS . "includes" . DS . "install.class.php");
+	require_once(JPATH_ROOT . "/administrator/components/com_rsgallery2/includes/install.class.php");
 	$install = new rsgInstall();
 	$tables = $install->tablelistNew;
 	foreach ($tables as $table) {

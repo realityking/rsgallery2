@@ -133,7 +133,7 @@ class InstallerController extends JController
 			JError::raiseWarning( 500, 'Can not delete default template.', "Select an other template and then delete this one." );
 		}
 		else{
-			JFolder::delete(JPATH_RSGALLERY2_SITE . DS . "templates" . DS . $template);
+			JFolder::delete(JPATH_RSGALLERY2_SITE . "/templates/" . $template);
 		}
 		
 		$this->manage();		

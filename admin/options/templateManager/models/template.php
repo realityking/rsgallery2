@@ -7,7 +7,7 @@
  */
 
 // Import library dependencies
-require_once(dirname(__FILE__).DS.'extension.php');
+require_once(dirname(__FILE__) . '/extension.php');
 jimport( 'joomla.filesystem.folder' );
 
 /**
@@ -49,16 +49,16 @@ class InstallerModelTemplate extends InstallerModel
 			return JError::raiseWarning( 500, 'Template not specified' );
 		}
 
-		$tBaseDir	= JPath::clean(JPATH_RSGALLERY2_SITE .DS. 'templates');
+		$tBaseDir	= JPath::clean(JPATH_RSGALLERY2_SITE . '/templates');
 
-		if (!is_dir( $tBaseDir . DS . $this->template )) {
+		if (!is_dir( $tBaseDir . '/' . $this->template )) {
 			return JError::raiseWarning( 500, 'Template not found' );
 		}
 		$lang =& JFactory::getLanguage();
 		$lang->load( 'tpl_'.$this->template, JPATH_RSGALLERY2_SITE );
 
-		$ini	= JPATH_RSGALLERY2_SITE .DS. 'templates'.DS.$this->template.DS.'params.ini';
-		$xml	= JPATH_RSGALLERY2_SITE .DS. 'templates'.DS.$this->template.DS.'templateDetails.xml';
+		$ini	= JPATH_RSGALLERY2_SITE . '/templates/' . $this->template . '/params.ini';
+		$xml	= JPATH_RSGALLERY2_SITE . '/templates/' . $this->template . '/templateDetails.xml';
 		$row	= TemplatesHelper::parseXMLTemplateFile($tBaseDir, $this->template);
 
 		jimport('joomla.filesystem.file');
@@ -105,7 +105,7 @@ class InstallerModelTemplate extends InstallerModel
 		JClientHelper::setCredentialsFromRequest('ftp');
 		$ftp = JClientHelper::getCredentials('ftp');
 		
-		$file = JPATH_RSGALLERY2_SITE.DS.'templates'.DS.$this->template.DS.'params.ini';
+		$file = JPATH_RSGALLERY2_SITE . '/templates/' . $this->template . '/params.ini';
 		
 		jimport('joomla.filesystem.file');
 		if (JFile::exists($file) && count($this->params))

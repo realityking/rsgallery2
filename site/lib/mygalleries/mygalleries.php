@@ -19,7 +19,7 @@ if($document->getType() == 'html') {
 }
 
 //Load required class file
-require_once( JPATH_RSGALLERY2_SITE . DS . 'lib' . DS . 'mygalleries' . DS . 'mygalleries.class.php' );
+require_once( JPATH_RSGALLERY2_SITE . '/lib/mygalleries/mygalleries.class.php' );
 
 //Get parameters from URL and/or form
 //$cid	= rsgInstance::getInt('cid', array(0) );//no longer neccessary?
@@ -211,7 +211,7 @@ function saveUploadedItem() {
             		$ziplist = $upload->handleZIP($i_file);
             		
             		//Set extract dir for uninstall purposes
-            		$extractdir = JPATH_ROOT . DS . "media" . DS . $upload->extractDir . DS;
+            		$extractdir = JPATH_ROOT . "/media/" . $upload->extractDir . '/';
             		
             		//Import images into right folder
             		for ($i = 0; $i<sizeof($ziplist); $i++) {
@@ -235,13 +235,13 @@ function saveUploadedItem() {
 					$mainframe->redirect( $redirect , JText::_('Image size is too big for upload') );
 				
 				$file_name = $i_file['name'];
-				if ( move_uploaded_file($i_file['tmp_name'], JPATH_ROOT . DS ."media" . DS . $file_name) ) {
+				if ( move_uploaded_file($i_file['tmp_name'], JPATH_ROOT . "/media/" . $file_name) ) {
 					//Import into database and copy to the right places
-					$imported = imgUtils::importImage(JPATH_ROOT . DS ."media" . DS . $file_name, $file_name, $i_cat, $title, $descr);
+					$imported = imgUtils::importImage(JPATH_ROOT . "/media/" . $file_name, $file_name, $i_cat, $title, $descr);
 					
 					if ($imported == 1) {
-						if (file_exists( JPATH_ROOT . DS ."media" . DS . $file_name ))
-							unlink( JPATH_ROOT . DS ."media" . DS . $file_name );
+						if (file_exists( JPATH_ROOT . "/media/" . $file_name ))
+							unlink( JPATH_ROOT . "/media/" . $file_name );
 					} else {
 						$mainframe->redirect( $redirect , 'Importing image failed! Notify RSGallery2. This should never happen!');
 					}

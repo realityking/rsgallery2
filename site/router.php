@@ -566,9 +566,9 @@ function Rsgallery2InitConfig() {
 	
 	if($config == null){
 		if (!defined('JPATH_RSGALLERY2_ADMIN')){
-			define('JPATH_RSGALLERY2_ADMIN', JPATH_ROOT. DS .'administrator' . DS . 'components' . DS . 'com_rsgallery2');
+			define('JPATH_RSGALLERY2_ADMIN', JPATH_ROOT. '/administrator/components/com_rsgallery2');
 		}
-		require_once(JPATH_RSGALLERY2_ADMIN . DS . 'includes' . DS . 'config.class.php');
+		require_once(JPATH_RSGALLERY2_ADMIN . '/includes/config.class.php');
 		$config = new rsgConfig();
 	}
 }

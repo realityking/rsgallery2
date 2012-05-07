@@ -7,7 +7,7 @@
  */
 
 // Import library dependencies
-require_once(dirname(__FILE__).DS.'extension.php');
+require_once(dirname(__FILE__) . '/extension.php');
 jimport( 'joomla.filesystem.folder' );
 
 /**
@@ -45,8 +45,8 @@ class InstallerModelEditCss extends InstallerModel
 		jimport('joomla.filesystem.file');
 
 		// Determine template CSS directory
-		$dir = JPATH_RSGALLERY2_SITE .DS. 'templates'.DS.$this->template.DS.'css';
-		$file = $dir .DS. $this->filename;
+		$dir = JPATH_RSGALLERY2_SITE . '/templates/' . $this->template . '/css';
+		$file = $dir . '/' . $this->filename;
 
 		$content = JFile::read($file);
 
@@ -74,7 +74,7 @@ class InstallerModelEditCss extends InstallerModel
 		JClientHelper::setCredentialsFromRequest('ftp');
 		$ftp = JClientHelper::getCredentials('ftp');
 		
-		$file = JPATH_RSGALLERY2_SITE .DS. 'templates'.DS.$this->template.DS.'css'.DS.$this->filename;
+		$file = JPATH_RSGALLERY2_SITE . '/templates/' . $this->template . '/css/' . $this->filename;
 		
 		// Try to make the css file writeable
 		if (!$ftp['enabled'] && JPath::isOwner($file) && !JPath::setPermissions($file, '0755')) {

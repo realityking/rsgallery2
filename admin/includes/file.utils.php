@@ -117,17 +117,17 @@ class fileUtils{
         $ext = substr( strrchr( $basename, "." ), 1 );
         
         // TODO: I think comparing the name to the filenames in the db would be cleaner and faster.
-        if ( file_exists( JPATH_DISPLAY . DS . $basename ) || file_exists( JPATH_ORIGINAL . DS . $basename )){
+        if ( file_exists( JPATH_DISPLAY . '/' . $basename ) || file_exists( JPATH_ORIGINAL . '/' . $basename )){
             $stub = substr( $basename, 0, (strlen( $ext )+1)*-1 );
     
             // if file exists, add a number, test, increment, test...  similar to what filemanagers will do
             $i=0;
             do {
                 $basename=$stub . "-" . ++$i . "." . $ext;
-            } while( file_exists( JPATH_DISPLAY . DS . $basename ) || file_exists( JPATH_ORIGINAL . DS . $basename ));
+            } while( file_exists( JPATH_DISPLAY . '/' . $basename ) || file_exists( JPATH_ORIGINAL . '/' . $basename ));
         }
         
-        $destination = JPATH_ORIGINAL . DS . $basename;
+        $destination = JPATH_ORIGINAL . '/' . $basename;
         if ( !move_uploaded_file( $tmpName, $destination )) {
             if( !copy( $tmpName, $destination )){
             	return new imageUploadError( $basename, JText::_('could not copy ')."$tmpName".JText::_(' image to: ')."$destination" );
@@ -157,17 +157,17 @@ class fileUtils{
 		//Get extension
         $ext = JFile::getExt($basename);
         
-        if ( JFile::exists( JPATH_DISPLAY . DS . $basename ) || JFile::exists( JPATH_ORIGINAL . DS . $basename )){
+        if ( JFile::exists( JPATH_DISPLAY . '/' . $basename ) || JFile::exists( JPATH_ORIGINAL . '/' . $basename )){
             $stub = substr( $basename, 0, (strlen( $ext )+1)*-1 );
     
             // if file exists, add a number, test, increment, test...  similar to what filemanagers will do
             $i=0;
             do {
                 $basename=$stub . "-" . ++$i . "." . $ext;
-            } while( JFile::exists( JPATH_DISPLAY . DS . $basename ) || JFile::exists( JPATH_ORIGINAL . DS . $basename ));
+            } while( JFile::exists( JPATH_DISPLAY . '/' . $basename ) || JFile::exists( JPATH_ORIGINAL . '/' . $basename ));
         }
         
-        $destination = JPATH_ORIGINAL . DS . $basename;
+        $destination = JPATH_ORIGINAL . '/' . $basename;
         if ( !JFile::copy( $tmpName, $destination )) {
             if( !JFile::upload( $tmpName, $destination )){
             	return new imageUploadError( $basename, JText::_('could not copy ')."$tmpName".JText::_(' image to: ')."$destination" );
@@ -378,7 +378,7 @@ class fileHandler {
      */
     
     function cleanMediaDir( $extractDir ) {
-        $mediadir = JPATH_ROOT. DS ."media". DS. $extractDir;
+        $mediadir = JPATH_ROOT. '/media/' . $extractDir;
 
         if (file_exists( $mediadir )) {
             fileHandler::deldir( JPath::clean($mediadir) );
@@ -429,9 +429,9 @@ class fileHandler {
         //Clean paths for archive extraction
     	$archivename 	= JPath::clean( $archive['tmp_name'] );
     	if (!$destination) {
-            $extractdir = JPath::clean( JPATH_ROOT.DS . 'media' . DS . $tmpdir . DS );
+            $extractdir = JPath::clean( JPATH_ROOT . '/media/' . $tmpdir . '/' );
     	} else {
-            $extractdir = JPath::clean($destination . DS . $tmpdir . DS);
+            $extractdir = JPath::clean($destination . '/' . $tmpdir . '/');
 		}
 		
 		//Unpack archive
@@ -452,9 +452,9 @@ class fileHandler {
 
 		if (count($archivelist) == 1)
 		{
-			if (JFolder::exists($extractdir.DS.$archivelist[0]))
+			if (JFolder::exists($extractdir . '/' . $archivelist[0]))
 			{
-				$extractdir = JPath::clean($extractdir.DS.$archivelist[0]);
+				$extractdir = JPath::clean($extractdir . '/' . $archivelist[0]);
 			}
 		}
     }
@@ -478,9 +478,9 @@ class fileHandler {
         $this->extractDir = $tmpdir;
         
         if (!$destination)
-            $extractDir = JPath::clean( JPATH_ROOT.DS . 'media' . DS . $tmpdir . DS );
+            $extractDir = JPath::clean( JPATH_ROOT . '/media/' . $tmpdir . '/' );
         else
-            $extractDir = JPath::clean($destination . DS . $tmpdir . DS);
+            $extractDir = JPath::clean($destination . '/' . $tmpdir . '/');
 
         //Create new zipfile
         $tzipfile = new PclZip($zip_file['tmp_name']);
@@ -524,9 +524,9 @@ class fileHandler {
         
         //Set destinatiopn
         if (!$destination)
-            $copyDir = JPath::clean( JPATH_ROOT.DS . 'media' . DS . $tmpdir . DS );
+            $copyDir = JPath::clean( JPATH_ROOT . '/media/' . $tmpdir . '/');
         else
-            $copyDir = JPath::clean($destination . DS . $tmpdir . DS);
+            $copyDir = JPath::clean($destination . '/' . $tmpdir . '/');
             
         mkdir( $copyDir );
         

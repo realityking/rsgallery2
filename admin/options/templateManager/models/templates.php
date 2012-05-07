@@ -1,22 +1,40 @@
 <?php
 /**
+
  * @package		RSGallery2
+
  * @subpackage	TemplateManager
+
  * @copyright	Copyright (C) 2005 - 2008 Open Source Matters. All rights reserved.
+
  * @license		GNU/GPL, see LICENSE.php
+
  */
+
+
 
 // Import library dependencies
-require_once(dirname(__FILE__).DS.'extension.php');
+
+require_once(dirname(__FILE__) . '/extension.php');
+
 jimport( 'joomla.filesystem.folder' );
 
+
+
 /**
+
  * RSGallery2 Template Manager Template Model
+
  *
+
  * @package		RSGallery2
+
  * @subpackage	TemplateManager
+
  * @since		1.5
+
  */
+
 class InstallerModelTemplates extends InstallerModel
 {
 	/**
@@ -48,13 +66,13 @@ class InstallerModelTemplates extends InstallerModel
 
 		$clientInfo =& $rsgConfig->getClientInfo( 'site', true );
 		$client = $clientInfo->name;
-		$templateDirs = JFolder::folders($clientInfo->path.DS.'templates');
+		$templateDirs = JFolder::folders($clientInfo->path . '/templates');
 
 		for ($i=0; $i < count($templateDirs); $i++) {
 			$template = new stdClass();
 			$template->folder = $templateDirs[$i];
 			$template->client = $clientInfo->id;
-			$template->baseDir = $clientInfo->path.DS.'templates';
+			$template->baseDir = $clientInfo->path . '/templates';
 
 			if ($this->_state->get('filter.string')) {
 				if (strpos($template->folder, $this->_state->get('filter.string')) !== false) {
@@ -73,12 +91,12 @@ class InstallerModelTemplates extends InstallerModel
 		// Check that the directory contains an xml file
 		foreach($templates as $template)
 		{
-			$dirName = $template->baseDir .DS. $template->folder;
+			$dirName = $template->baseDir . '/' . $template->folder;
 			$xmlFilesInDir = JFolder::files($dirName,'.xml$');
 
 			foreach($xmlFilesInDir as $xmlfile)
 			{
-				$data = JApplicationHelper::parseXMLInstallFile($dirName . DS. $xmlfile);
+				$data = JApplicationHelper::parseXMLInstallFile($dirName . '/' . $xmlfile);
 
 				$row = new StdClass();
 				$row->id 		= $rowid;

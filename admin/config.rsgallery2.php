@@ -831,7 +831,7 @@ class galleryUtils {
 	 	global $rsgConfig;
 	 	
 	 	$selected = $rsgConfig->get('watermark_font');
-	 	$fonts = JFolder::files(JPATH_RSGALLERY2_ADMIN.DS.'fonts', 'ttf');
+	 	$fonts = JFolder::files(JPATH_RSGALLERY2_ADMIN . '/fonts', 'ttf');
 	 	foreach ($fonts as $font) {
 	 		$fontlist[] = JHTML::_("Select.option", $font );
 	 	}

@@ -18,7 +18,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
  * @since		1.5
  */
 
-include_once(dirname(__FILE__).DS.'..'.DS.'default'.DS.'view.php');
+include_once(dirname(dirname(__FILE__)) . '/default/view.php');
 
 class InstallerViewTemplates extends InstallerViewDefault
 {

@@ -43,7 +43,7 @@ class rsgItem_audio extends rsgItem{
 	function _determineResources(){
 		global $rsgConfig;
 		
-		$original = $rsgConfig->get('imgPath_original') . DS . $this->name;
+		$original = $rsgConfig->get('imgPath_original') . '/' . $this->name;
 		
 		
 		if( file_exists( JPATH_ROOT . $original )){

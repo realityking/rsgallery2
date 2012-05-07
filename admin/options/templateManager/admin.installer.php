@@ -15,13 +15,13 @@
 // no direct access
 defined('_JEXEC') or die('Restricted access');
 
-require_once( rsgOptions_installer_path . DS . 'helpers' . DS . 'template.php');
-require_once( rsgOptions_installer_path . DS . 'controller.php' );
+require_once( rsgOptions_installer_path . '/helpers/template.php');
+require_once( rsgOptions_installer_path . '/controller.php' );
 
 $controller = new InstallerController( array(
 			'default_task' => 'installform',
-			'model_path'=>rsgOptions_installer_path.DS.'models',
-			'view_path'=>rsgOptions_installer_path.DS.'views'
+			'model_path'=>rsgOptions_installer_path . '/models',
+			'view_path'=>rsgOptions_installer_path . '/views'
 	));
 
 $controller->set('task_type', JRequest::getCmd('type'));

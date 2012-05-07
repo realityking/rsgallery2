@@ -104,7 +104,7 @@ class InstallerModel extends JModel
 		jimport('joomla.installer.installer');
 		$installer = & JInstaller::getInstance();
 		
-		require_once( rsgOptions_installer_path .DS. 'adapters' .DS. 'rsgtemplate.php' );
+		require_once( rsgOptions_installer_path . '/adapters/rsgtemplate.php' );
 		$installer->setAdapter( 'template', new JInstaller_rsgTemplate( $installer ) );  
 
 		// Uninstall the chosen extensions

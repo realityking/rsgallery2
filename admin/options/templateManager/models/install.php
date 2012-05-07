@@ -81,7 +81,7 @@ class InstallerModelInstall extends JModel
 
 		// Get an installer instance
 		$installer =& JInstaller::getInstance();
-		require_once( rsgOptions_installer_path .DS. 'adapters' .DS. 'rsgtemplate.php' );
+		require_once( rsgOptions_installer_path . '/adapters/rsgtemplate.php' );
 		$installer->setAdapter( 'rsgTemplate', new JInstaller_rsgTemplate( $installer ) );  
 
 		// Install the package
@@ -105,7 +105,7 @@ class InstallerModelInstall extends JModel
 		// Cleanup the install files
 		if (!is_file($package['packagefile'])) {
 			$config =& JFactory::getConfig();
-			$package['packagefile'] = $config->getValue('config.tmp_path').DS.$package['packagefile'];
+			$package['packagefile'] = $config->getValue('config.tmp_path') . '/' . $package['packagefile'];
 		}
 
 		JInstallerHelper::cleanupInstall($package['packagefile'], $package['extractdir']);
@@ -148,7 +148,7 @@ class InstallerModelInstall extends JModel
 
 		// Build the appropriate paths
 		$config =& JFactory::getConfig();
-		$tmp_dest 	= $config->getValue('config.tmp_path').DS.$userfile['name'];
+		$tmp_dest 	= $config->getValue('config.tmp_path') . '/' . $userfile['name'];
 		$tmp_src	= $userfile['tmp_name'];
 
 		// Move uploaded file
@@ -231,7 +231,7 @@ class InstallerModelInstall extends JModel
 		$tmp_dest 	= $config->getValue('config.tmp_path');
 
 		// Unpack the downloaded package file
-		$package = JInstallerHelper::unpack($tmp_dest.DS.$p_file);
+		$package = JInstallerHelper::unpack($tmp_dest . '/' . $p_file);
 
 		return $package;
 	}

@@ -75,7 +75,7 @@ class JInstaller_rsgTemplate extends JObject
 		$this->set('name', $name);
 
 		// Set the template root path
-		$this->parent->setPath('extension_root', $basePath.DS.'templates'.DS.strtolower(str_replace(" ", "_", $this->get('name'))));
+		$this->parent->setPath('extension_root', $basePath . '/templates/' . strtolower(str_replace(" ", "_", $this->get('name'))));
 
 		/*
 		 * If the template directory already exists, then we will assume that the template is already
@@ -167,7 +167,7 @@ class JInstaller_rsgTemplate extends JObject
 			JError::raiseWarning(100, JText::_('Template').' '.JText::_('Uninstall').': '.JText::_('Invalid application'));
 			return false;
 		}
-		$this->parent->setPath('extension_root', $client->path.DS.'templates'.DS.$name);
+		$this->parent->setPath('extension_root', $client->path . '/templates/' . $name);
 		$this->parent->setPath('source', $this->parent->getPath('extension_root'));
 
 		$manifest =& $this->parent->getManifest();

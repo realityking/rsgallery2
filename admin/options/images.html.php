@@ -384,7 +384,7 @@ class html_rsg2_images {
 		<?php 
 		//translated text into javascript -> javascript to .php file
 		/*<script type="text/javascript" src="<?php echo JURI_SITE;?>/administrator/components/com_rsgallery2/includes/script.php"></script>*/
-		require_once(JPATH_RSGALLERY2_ADMIN . DS . 'includes' . DS . 'script.php');
+		require_once(JPATH_RSGALLERY2_ADMIN . '/includes/script.php');
 		?>
 		<form action="index2.php" method="post" name="adminForm" id="adminForm" enctype="multipart/form-data" class="form-validate">
 		<table class="adminheading">
@@ -559,7 +559,7 @@ class html_rsg2_images {
 					</td>
                     <td>
                         <input type="text" name="ftppath" value="<?php echo $FTP_path; ?>" size="30" />
-						<br/><?php echo JText::sprintf('FTP_BASE_PATH', JPATH_SITE).DS; ?>
+						<br/><?php echo JText::sprintf('FTP_BASE_PATH', JPATH_SITE) . '/'; ?>
                     </td>
                 </tr>
                 <tr>
@@ -665,17 +665,17 @@ class html_rsg2_images {
         foreach ($ziplist as $filename) {
         	$k++;
         	//Check if filename is dir
-        	if ( is_dir(JPATH_ROOT. DS . 'media' . DS . $extractDir . DS . $filename) ) {
+        	if ( is_dir(JPATH_ROOT . '/media/' . $extractDir . '/' . $filename) ) {
         		continue;
         	} else {
         		//Check if file is allowed
         		$allowed_ext = array('gif','jpg','png');
         		$allowedVideo_ext = array('flv','avi','mov');
-        		$ext = fileHandler::getImageType( JPATH_ROOT. DS . 'media' . DS . $extractDir . DS . $filename );
+        		$ext = fileHandler::getImageType( JPATH_ROOT . '/media/' . $extractDir . '/' . $filename );
 				if ( in_array($ext, $allowedVideo_ext) ) {
         			// build preview image
-					$basePath = JPATH_SITE . DS .'media' . DS . $extractDir . DS;
-					require_once( JPATH_RSGALLERY2_ADMIN. DS .'includes' . DS . 'video.utils.php' );
+					$basePath = JPATH_SITE . '/media/' . $extractDir . '/';
+					require_once( JPATH_RSGALLERY2_ADMIN . 'includes/video.utils.php' );
 					Ffmpeg::capturePreviewImage( $basePath . $filename, $basePath . $filename . '.png');
 					$displayImage = $filename . '.png';
 					$i++;

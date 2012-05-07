@@ -13,7 +13,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 
 require_once( $rsgOptions_path . 'images.html.php' );
 require_once( $rsgOptions_path . 'images.class.php' );
-require_once( JPATH_RSGALLERY2_ADMIN . DS . 'admin.rsgallery2.html.php' );
+require_once( JPATH_RSGALLERY2_ADMIN . '/admin.rsgallery2.html.php' );
 
 $cid = JRequest::getVar("cid", array(), 'default', 'array' );
 
@@ -569,7 +569,7 @@ function copyImage( $cid, $option ) {
     $tmpdir	= uniqid( 'rsgcopy_' );
     
     //Get full path to copy directory
-	$copyDir = JPath::clean( JPATH_ROOT.DS . 'media' . DS . $tmpdir . DS );
+	$copyDir = JPath::clean( JPATH_ROOT . '/media/' . $tmpdir . '/' );
     if( !JFolder::create($copyDir ) ) {
     		$errors[] = 'Unable to create temp directory ' . $copyDir; 
     } else {
@@ -691,11 +691,11 @@ function save_batchupload() {
         //If image is marked for deletion, delete and continue with next iteration
         if (isset($delete[$i]) AND ($delete[$i] == 'true')) {
             //Delete file from server
-            unlink(JPATH_ROOT.DS."media".DS.$extractdir.DS.$filename[$i]);
+            unlink(JPATH_ROOT . "/media/" . $extractdir . '/' . $filename[$i]);
             continue;
         } else {
             //Setting variables for importImage()
-            $imgTmpName = JPATH_ROOT.DS."media".DS.$extractdir.DS.$filename[$i];
+            $imgTmpName = JPATH_ROOT . "/media/" . $extractdir . '/' . $filename[$i];
             $imgName 	= $filename[$i];
             $imgCat	 	= $category[$i];
             $imgTitle 	= $ptitle[$i];

@@ -47,7 +47,7 @@ class JGPagination extends JPagination
 		$itemOverride = false;
 		$listOverride = false;
 
-		$chromePath = JPATH_THEMES.DS.$appl->getTemplate().DS.'html'.DS.'gpagination.php';
+		$chromePath = JPATH_THEMES . '/' . $appl->getTemplate() . '/html/gpagination.php';
 		if (file_exists($chromePath))
 		{
 			require_once $chromePath;
@@ -138,7 +138,7 @@ class JGPagination extends JPagination
 		$list['pagescounter']	= $this->getPagesCounter();
 		$list['pageslinks']		= $this->getPagesLinks();
 
-		$chromePath		= JPATH_THEMES.DS.$appl->getTemplate().DS.'html'.DS.'gpagination.php';
+		$chromePath		= JPATH_THEMES . '/' . $appl->getTemplate() . '/html/gpagination.php';
 		if (file_exists( $chromePath ))
 		{
 			require_once $chromePath;

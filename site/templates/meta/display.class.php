@@ -23,13 +23,13 @@ class rsgDisplay extends JObject{
 		// load template parameters
 		jimport('joomla.filesystem.file');
 		// Read the ini file
-		$ini	= JPATH_RSGALLERY2_SITE .DS. 'templates'.DS.$template.DS.'params.ini';
+		$ini	= JPATH_RSGALLERY2_SITE . '/templates/' . $template . '/params.ini';
 		if (JFile::exists($ini)) {
 			$content = JFile::read($ini);
 		} else {
 			$content = null;
 		}
-		$xml	= JPATH_RSGALLERY2_SITE .DS. 'templates'.DS.$template .DS.'templateDetails.xml';
+		$xml	= JPATH_RSGALLERY2_SITE . '/templates/' . $template . '/templateDetails.xml';
 		$this->params = new JParameter($content, $xml, 'template');
 		
 	}
@@ -102,11 +102,11 @@ class rsgDisplay extends JObject{
 	function display( $file = null ){
 		global $rsgConfig;
 		$template = preg_replace( '#\W#', '', rsgInstance::getVar( 'rsgTemplate', $rsgConfig->get('template') ));
-		$templateDir = JPATH_RSGALLERY2_SITE . DS . 'templates' . DS . $template . DS . 'html';
+		$templateDir = JPATH_RSGALLERY2_SITE . '/templates/' . $template . '/html';
 	
 		$file = preg_replace('/[^A-Z0-9_\.-]/i', '', $file);
 
-		include $templateDir . DS . $file;
+		include $templateDir . '/' . $file;
 	}
 
 	/**
@@ -476,7 +476,7 @@ class rsgDisplay extends JObject{
 	 * @result Array with EXIF values
 	 */
 	function _showEXIF() {
-		require_once(JPATH_ROOT . DS . "components" . DS . "com_rsgallery2" . DS . "lib" . DS . "exifreader" . DS . "exifReader.php");
+		require_once(JPATH_ROOT . "/components/com_rsgallery2/lib/exifreader/exifReader.php");
 		$image = rsgInstance::getItem();
 		$filename = JPATH_ROOT . $image->original->name;
 		
@@ -489,7 +489,7 @@ class rsgDisplay extends JObject{
 		
 		if($rsgConfig->get('displaySearch') != 0)
 		{
-			require_once(JPATH_ROOT . DS . "components" . DS . "com_rsgallery2" . DS . "lib" . DS . "rsgsearch" . DS . "search.html.php");
+			require_once(JPATH_ROOT . "/components/com_rsgallery2/lib/rsgsearch/search.html.php");
 			html_rsg2_search::showSearchBox();
 		}
     }

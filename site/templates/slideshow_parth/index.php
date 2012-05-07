@@ -10,8 +10,8 @@
 defined( '_JEXEC' ) or die( 'Restricted Access' );
 
 // bring in display code
-$templatePath = JPATH_RSGALLERY2_SITE . DS . 'templates' . DS . 'slideshow_parth';
-require_once( $templatePath . DS . 'display.class.php');
+$templatePath = JPATH_RSGALLERY2_SITE . '/templates/slideshow_parth';
+require_once( $templatePath . '/display.class.php');
 
 $rsgDisplay = new rsgDisplay_slideshow_parth();
 

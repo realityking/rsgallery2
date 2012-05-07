@@ -41,7 +41,7 @@ class rsgDisplay_semantic extends rsgDisplay{
 		    $kidCountTotal > $limit )  ||
 			$rsgConfig->get('dispLimitbox') == 2 )
 			{
-			require_once( JPATH_RSGALLERY2_ADMIN . DS . 'includes' . DS . 'gpagination.php' );
+			require_once( JPATH_RSGALLERY2_ADMIN . '/includes/gpagination.php' );
 			$this->kids = array_slice( $this->kids, $limitstart, $limit );
 			$this->pageNav = new JGPagination($kidCountTotal, $limitstart, $limit );
 

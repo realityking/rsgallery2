@@ -18,7 +18,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
  * @since		1.5
  */
 
-include_once(dirname(__FILE__).DS.'..'.DS.'default'.DS.'view.php');
+include_once(dirname(dirname(__FILE__)) . '/default/view.php');
 
 class InstallerViewTemplate extends InstallerViewDefault
 {
@@ -45,7 +45,7 @@ class InstallerViewTemplate extends InstallerViewDefault
 	
 	function isParamWriteable(){
 		
-		$templatefile = JPATH_RSGALLERY2_SITE .DS. 'templates' .DS. $this->item->template .DS. 'params.ini';
+		$templatefile = JPATH_RSGALLERY2_SITE . '/templates/' . $this->item->template . '/params.ini';
 		return is_writable($templatefile) ? JText::_( 'Writable' ):JText::_( 'Unwritable' );
 				
 	}

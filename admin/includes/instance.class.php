@@ -50,7 +50,7 @@ class rsgInstance{//as of v2.1.0 SVN 975 no longer extending JRequest
 
 		if( $showTemplate ){
 			// execute a frontend template based instance
-			require_once( JPATH_RSGALLERY2_SITE . DS . 'main.rsgallery2.php' );
+			require_once( JPATH_RSGALLERY2_SITE . '/main.rsgallery2.php' );
 			rsgInstance::mainSwitch();
 		}
 
@@ -64,16 +64,16 @@ class rsgInstance{//as of v2.1.0 SVN 975 no longer extending JRequest
 	function mainSwitch(){
 		switch( rsgInstance::getVar( 'rsgOption', '' )) {
 			case 'rsgComments':
-				require_once(JPATH_RSGALLERY2_SITE . DS . 'lib' . DS . 'rsgcomments' . DS . 'rsgcomments.php');
+				require_once(JPATH_RSGALLERY2_SITE . '/lib/rsgcomments/rsgcomments.php');
 				break;
 			case 'rsgVoting':
-				require_once(JPATH_RSGALLERY2_SITE . DS . 'lib' . DS . 'rsgvoting' . DS . 'rsgvoting.php');
+				require_once(JPATH_RSGALLERY2_SITE . '/lib/rsgvoting/rsgvoting.php');
 				break;
 			case 'myGalleries':
-				require_once(JPATH_RSGALLERY2_SITE . DS . 'lib' . DS . 'mygalleries' . DS . 'mygalleries.php');
+				require_once(JPATH_RSGALLERY2_SITE . '/lib/mygalleries/mygalleries.php');
 				break;
 			case'search':
-				require_once(JPATH_RSGALLERY2_SITE . DS . 'lib' . DS . 'rsgsearch' . DS . 'search.php');
+				require_once(JPATH_RSGALLERY2_SITE . '/lib/rsgsearch/search.php');
 				break;
 			default:
 				switch( rsgInstance::getVar( 'task', '' ) ){
@@ -85,7 +85,7 @@ class rsgInstance{//as of v2.1.0 SVN 975 no longer extending JRequest
 						break;
 					default:
 						// require the base class rsgDisplay
-						require_once( JPATH_RSGALLERY2_SITE . DS . 'templates' . DS . 'meta' . DS . 'display.class.php' );
+						require_once( JPATH_RSGALLERY2_SITE . '/templates/meta/display.class.php' );
 						// show the template
 						template();
 				}

@@ -10,8 +10,8 @@
 defined( '_JEXEC' ) or die( 'Restricted Access' );
 
 // bring in display code
-$templatePath = JPATH_RSGALLERY2_SITE . DS . 'templates' . DS . 'debug_listeverything';
-require_once( $templatePath . DS . 'display.class.php');
+$templatePath = JPATH_RSGALLERY2_SITE . '/templates/debug_listeverything';
+require_once( $templatePath . '/display.class.php');
 
 global $mainframe;
 $template_dir = "JURI_SITE/components/com_rsgallery2/templates/debug_listeverything";

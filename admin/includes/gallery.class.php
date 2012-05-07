@@ -332,7 +332,7 @@ class rsgGallery extends JObject{
 	 * @param string char to separate path with (default = DS)
 	 * @return path to gallery
 	 **/
-	function getPath($path_separator = DS){
+	function getPath($path_separator = '/'){
 
 		global $rsgConfig;
 		
