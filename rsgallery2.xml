@@ -1,0 +1,144 @@
+<?xml version="1.0" ?>
+<install type="component" version="1.5.0" method="upgrade">
+
+  <name>RSGallery2</name>
+  <creationDate>19 September 2011</creationDate>
+  <author>RSGallery2 Team</author>
+  <copyright>This component is released under the GNU/GPL License</copyright>
+  <authorEmail>team@rsgallery2.nl</authorEmail>
+  <authorUrl>http://www.rsgallery2.nl</authorUrl>
+  <version>2.2.1</version>
+  <license>GNU/GPL</license>
+  <description>RSGALLERY2 IS A FULL FEATURED GALLERY COMPONENT FOR JOOMLA VISIT THE OFFICIAL SITE FOR FAQ SUPPORT FORUMS AND LATEST NEWS WWW_RSGALLERY2_NL</description>
+
+  <files folder="site">
+    <folder>flash</folder>
+    <folder>lib</folder>
+    <folder>templates</folder>
+    <folder>views</folder>
+    <filename>main.rsgallery2.php</filename>
+	<filename>picklist.js</filename>
+	<filename>router.php</filename>
+	<filename>rsgallery.css</filename>
+    <filename>rsgallery2.php</filename>
+    <filename>slideshow.rsgallery2.php</filename>
+  </files>
+
+  <images folder="site">
+    <filename>images/delete.png</filename>
+	<filename>images/edit.png</filename>
+	<filename>images/folder.gif</filename>
+	<filename>images/home.gif</filename>
+    <filename>images/next.jpg</filename>
+	<filename>images/no_delete.png</filename>
+	<filename>images/no_edit.png</filename>
+    <filename>images/no_pics.gif</filename>
+    <filename>images/previous.jpg</filename>
+    <filename>images/search.png</filename>
+	<filename>images/shadow.gif</filename>
+    <filename>images/shadowAlpha.png</filename>
+    <filename>images/start.jpg</filename>
+	<filename>images/status_hidden.png</filename>
+	<filename>images/status_owner.png</filename>
+    <filename>images/status_upload.png</filename>
+    <filename>images/stop.jpg</filename>
+  </images>
+
+  <installfile>install.rsgallery2.php</installfile>
+  <uninstallfile>uninstall.rsgallery2.php</uninstallfile>
+
+  <languages folder="languages">
+    <language tag="da-DK">da-DK.com_rsgallery2.ini</language>
+	<language tag="de-DE">de-DE.com_rsgallery2.ini</language>
+	<language tag="el-GR">el-GR.com_rsgallery2.ini</language>
+	<language tag="en-GB">en-GB.com_rsgallery2.ini</language>
+	<language tag="es-ES">es-ES.com_rsgallery2.ini</language>
+    <language tag="fi-FI">fi-FI.com_rsgallery2.ini</language>
+    <language tag="fr-FR">fr-FR.com_rsgallery2.ini</language>
+    <language tag="he-IL">he-IL.com_rsgallery2.ini</language>
+	<language tag="hr-HR">hr-HR.com_rsgallery2.ini</language>
+	<language tag="hu-HU">hu-HU.com_rsgallery2.ini</language>
+    <language tag="it-IT">it-IT.com_rsgallery2.ini</language>
+    <language tag="nb-NO">nb-NO.com_rsgallery2.ini</language>
+	<language tag="nl-NL">nl-NL.com_rsgallery2.ini</language>
+    <language tag="pt-BR">pt-BR.com_rsgallery2.ini</language>
+	<language tag="sl-SI">sl-SI.com_rsgallery2.ini</language>
+	<language tag="tr-TR">tr-TR.com_rsgallery2.ini</language>
+  </languages>
+
+  <administration>
+    <menu>RSGallery2</menu>
+    <submenu>
+      <menu link="option=com_rsgallery2">Control Panel</menu>
+      <menu link="option=com_rsgallery2&amp;rsgOption=images&amp;task=batchupload">Batch Upload</menu>
+      <menu link="option=com_rsgallery2&amp;rsgOption=images&amp;task=upload">Upload</menu>
+      <menu link="option=com_rsgallery2&amp;rsgOption=galleries">Galleries</menu>
+      <menu link="option=com_rsgallery2&amp;rsgOption=images">Items</menu>
+    </submenu>
+    <files folder="admin">
+      <folder>elements</folder>
+	  <folder>fonts</folder>
+	  <folder>help</folder>
+      <folder>includes</folder>
+      <folder>options</folder>
+      <folder>sql</folder>
+      <filename>admin.rsgallery2.css</filename>
+      <filename>admin.rsgallery2.html.php</filename>
+      <filename>admin.rsgallery2.php</filename>
+      <filename>changelog.php</filename>
+      <filename>config.rsgallery2.php</filename>
+      <filename>init.rsgallery2.php</filename>
+      <filename>toolbar.rsgallery2.html.php</filename>
+      <filename>toolbar.rsgallery2.php</filename>
+    </files>
+
+    <images folder="admin">
+      <filename>images/blockdevice.png</filename>
+	  <filename>images/categories.png</filename>
+	  <filename>images/config.png</filename>
+      <filename>images/cpanel.png</filename>
+	  <filename>images/cssedit.png</filename>
+	  <filename>images/db_optimize.png</filename>
+	  <filename>images/dbrestore.png</filename>
+	  <filename>images/extension.png</filename>
+	  <filename>images/frontpage.png</filename>
+      <filename>images/generic.png</filename>
+      <filename>images/install.png</filename>
+      <filename>images/maintenance.png</filename>
+      <filename>images/mediamanager.png</filename>
+      <filename>images/menu.png</filename>
+      <filename>images/rsg2_menu.png</filename>
+	  <filename>images/rsg2-categories.png</filename>
+      <filename>images/rsg2-cpanel.png</filename>
+	  <filename>images/rsg2-install.png</filename>
+      <filename>images/rsg2-logo.png</filename>
+      <filename>images/rsg2-mediamanager.png</filename>
+      <filename>images/sub_arrow.png</filename>
+      <filename>images/template.png</filename>
+      <filename>images/upload.png</filename>
+      <filename>images/upload_zip.png</filename>
+    </images>
+
+    <languages folder="languages">
+		<language tag="da-DK">da-DK.com_rsgallery2.ini</language>
+		<language tag="de-DE">de-DE.com_rsgallery2.ini</language>
+		<language tag="el-GR">el-GR.com_rsgallery2.ini</language>
+		<language tag="en-GB">en-GB.com_rsgallery2.ini</language>
+		<language tag="en-GB">en-GB.com_rsgallery2.menu.ini</language>
+		<language tag="es-ES">es-ES.com_rsgallery2.ini</language>
+		<language tag="fi-FI">fi-FI.com_rsgallery2.ini</language>
+		<language tag="fr-FR">fr-FR.com_rsgallery2.ini</language>
+		<language tag="he-IL">he-IL.com_rsgallery2.ini</language>
+		<language tag="hr-HR">hr-HR.com_rsgallery2.ini</language>
+		<language tag="hu-HU">hu-HU.com_rsgallery2.ini</language>
+		<language tag="it-IT">it-IT.com_rsgallery2.ini</language>
+		<language tag="nb-NO">nb-NO.com_rsgallery2.ini</language>
+		<language tag="nl-NL">nl-NL.com_rsgallery2.ini</language>
+		<language tag="nl-NL">nl-NL.com_rsgallery2.menu.ini</language>
+		<language tag="pt-BR">pt-BR.com_rsgallery2.ini</language>
+		<language tag="sl-SI">sl-SI.com_rsgallery2.ini</language>
+		<language tag="tr-TR">tr-TR.com_rsgallery2.ini</language>
+    </languages>
+
+  </administration>
+</install>

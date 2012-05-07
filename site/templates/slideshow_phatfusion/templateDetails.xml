@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<mosinstall type="rsgTemplate">
+	<name>Slideshow Phatfusion</name>
+	<creationDate>2008</creationDate>
+	<author>rsdev.nl</author>
+	<copyright>Open Source, GPL</copyright>
+	<authorEmail>webmaster@rsdev.nl</authorEmail>
+	<authorUrl>rsdev.nl</authorUrl>
+	<version>1.0</version>
+	<description>Slideshow implementation, based on the Phatfusion Slideshow.</description>
+	<files>
+		<filename>index.php</filename>
+		<filename>display.class.php</filename>
+		<filename>templateDetails.xml</filename>
+		<filename>html/slideshow.php</filename>
+		<filename>images/loading.gif</filename>
+		<filename>js/backgroundSlider.js</filename>
+		<filename>js/slideshow.js</filename>
+	</files>
+	<css>
+		<filename>css/slideshow.css</filename>
+	</css>
+</mosinstall>

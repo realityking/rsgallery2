@@ -1,0 +1,63 @@
+/*             styles for the star rater                */
+#rsgvoteform ul.star-rating{
+	list-style:none;
+	margin: 0px;
+	padding:0px;
+	width: 100px;
+	height: 20px;
+	position: relative;
+	background: url(images/star_rating.png) top left repeat-x;		
+}
+#rsgvoteform ul.star-rating li{
+	padding:0px;
+	margin:0px;
+	/*\*/
+	float: left;
+	/* */
+}
+#rsgvoteform ul.star-rating li a{
+	display:block;
+	width:20px;
+	height: 20px;
+	text-decoration: none;
+	text-indent: -9000px;
+	z-index: 20;
+	position: absolute;
+	padding: 0px;
+}
+#rsgvoteform ul.star-rating li a:hover{
+	background: url(images/star_rating.png) left bottom;
+	z-index: 1;
+	left: 0px;
+}
+#rsgvoteform ul.star-rating a.one-star{
+	left: 0px;
+}
+#rsgvoteform ul.star-rating a.one-star:hover{
+	width:20px;
+}
+#rsgvoteform ul.star-rating a.two-stars{
+	left:20px;
+}
+#rsgvoteform ul.star-rating a.two-stars:hover{
+	width: 40px;
+}
+#rsgvoteform ul.star-rating a.three-stars:hover{
+	width: 60px;
+}
+#rsgvoteform ul.star-rating a.three-stars{
+	left: 40px;
+}
+#rsgvoteform ul.star-rating a.four-stars{
+	left: 60px;
+}	
+#rsgvoteform ul.star-rating a.four-stars:hover{
+	width: 80px;
+}
+#rsgvoteform ul.star-rating a.five-stars{
+	left: 80px;
+}
+#rsgvoteform ul.star-rating a.five-stars:hover{
+	width: 100px;
+}
+		

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="rsgTemplate">
+	<name>Semantic</name>
+	<creationDate>25/01/10</creationDate>
+	<author>RSGallery2 Team</author>
+	<copyright>Open Source, GPL</copyright>
+	<authorEmail>team@rsgallery2.nl</authorEmail>
+	<authorUrl>rsgallery2.nl</authorUrl>
+	<description>Default semantic template.</description>
+	<version>2.1</version>
+	<files>
+		<filename>index.php</filename>
+		<filename>display.class.php</filename>
+		<filename>templateDetails.xml</filename>
+		<filename>params.ini</filename>
+		<filename>changelog.txt</filename>
+		<filename>html/exif.php</filename>
+		<filename>html/gallery.php</filename>
+		<filename>html/inline.php</filename>
+		<filename>html/item_audio.php</filename>
+		<filename>html/item_image.php</filename>
+		<filename>html/item_video.php</filename>
+		<filename>html/thumbs_float.php</filename>
+		<filename>html/thumbs_table.php</filename>
+	</files>
+	<css>
+		<filename>css/template.css</filename>
+	</css>
+  <params>
+    <param name="testParameter" type="list" default="white" label="Color Variation" description="Color variation to use">
+      <option value="blue">Blue</option>
+      <option value="red">Red</option>
+      <option value="green">Green</option>
+      <option value="orange">Orange</option>
+      <option value="black">Black</option>
+      <option value="white">White</option>
+    </param>
+  </params>
+  </install>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<mosparams type="component">
+    <params>
+        <!--        <param name="voting_view" type="list" default="0" label="Voting - View Results" description="Choose who can view the voting results.">
+            <option value="global">Use Global</option>
+            <option value="anyone">Anyone</option>
+            <option value="registered">Registered</option>
+            <option value="off">Nobody</option>
+        </param>
+        <param name="voting_vote" type="list" default="0" label="Voting - Suffrage" description="Choose who can vote for images in this gallery.">
+            <option value="global">Use Global</option>
+            <option value="anyone">Anyone Can Vote</option>
+            <option value="registered">Registered Only</option>
+            <option value="off">No Voting</option>
+        </param>
+
+        <param name="gallery_sort_order" type="list" default="0" label="Sort order" description="Determine sort order for images.">
+            <option value="global">Use Global</option>
+            <option value="ordering">Order by ordering field</option>
+            <option value="desc">Date ascending</option>
+            <option value="asc">Date descending</option>
+        </param>
+        -->
+    </params>
+</mosparams>

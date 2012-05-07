@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<mosinstall type="rsgTemplate">
+	<name>Slideshow Parth</name>
+	<creationDate>2007</creationDate>
+	<author>RSGallery2 Team</author>
+	<copyright>Open Source, GPL</copyright>
+	<authorEmail>team@rsgallery2.nl</authorEmail>
+	<authorUrl>rsgallery2.nl</authorUrl>
+	<version>1.0</version>
+	<description>Slideshow implementation, based on the SmoothGallery solution by Johndesign.net.</description>
+	<files>
+		<filename>index.php</filename>
+		<filename>display.class.php</filename>
+		<filename>templateDetails.xml</filename>
+		<filename>resizer.php</filename>
+		<filename>html/slideshow.php</filename>
+		<filename>images/carrow1.gif</filename>
+		<filename>images/carrow2.gif</filename>
+		<filename>images/fleche1.gif</filename>
+		<filename>images/fleche1.png</filename>
+		<filename>images/fleche2.gif</filename>
+		<filename>images/fleche2.png</filename>
+		<filename>images/loading-bar-black.gif</filename>
+		<filename>images/open.gif</filename>
+		<filename>images/open.png</filename>
+		<filename>images/bg/biglink_off.gif</filename>
+		<filename>images/bg/biglink_on.gif</filename>
+		<filename>images/bg/bullet.gif</filename>
+		<filename>images/bg/footer.jpg</filename>
+		<filename>images/bg/gradient.jpg</filename>
+		<filename>images/bg/gradient1.jpg</filename>
+		<filename>images/bg/header.jpg</filename>
+		<filename>js/HistoryManager.js</filename>
+		<filename>js/jd.gallery.js</filename>
+		<filename>js/jd.gallery.set.js</filename>
+		<filename>js/jd.gallery.transitions.js</filename>
+		<filename>js/mootools.v1.11.js</filename>
+		<filename>js/mootools.v1.11.ext.js</filename>
+		<filename>js/mootools.v1.11.uncompressed.js</filename>
+	</files>
+	<css>
+		<filename>css/template.css</filename>
+		<filename>css/jd.gallery.css</filename>
+	</css>
+</mosinstall>

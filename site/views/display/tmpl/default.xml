@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Standard Gallery Display">
+		<message>
+			<![CDATA[Display]]>
+		</message>
+	</layout>
+	<state>
+		<name>Gallery Dipslay</name>
+		<description>This layout shows a gallery.</description>
+		<params>
+			<param name="gid" type="text" default="0" label="Gallery ID" description="" size="3" />
+			<param name="rsgTemplate" type="text" default="" label="Template" description="" size="15" />
+		</params>
+	</state>
+</metadata>

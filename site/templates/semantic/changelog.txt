@@ -1,0 +1,9 @@
+Semantic - v2.1
+
+2010-01-25 - Mirjam - v2.1
+[fix]	removed Joomla's 1.0.x page navigation
+	line: require_once(JPATH_ROOT.'/includes/pageNavigation.php');
+	This was bothering sh404SEF's 'pagination trick'.
+
+Set of file with which was started:
+RSGallery2's template Semantic v2.0 as distributed with RSGallery2 2.1.0

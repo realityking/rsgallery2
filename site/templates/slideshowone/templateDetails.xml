@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<mosinstall type="rsgTemplate">
+	<name>Slideshow One</name>
+	<creationDate>2007</creationDate>
+	<author>RSGallery2 Team</author>
+	<copyright>Open Source, GPL</copyright>
+	<authorEmail>team@rsgallery2.nl</authorEmail>
+	<authorUrl>rsgallery2.nl</authorUrl>
+	<version>2.0</version>
+	<description>Default slideshow that we have been shipping with for a while.</description>
+	<files>
+		<filename>index.php</filename>
+		<filename>display.class.php</filename>
+		<filename>templateDetails.xml</filename>
+	</files>
+	<css>
+		<filename>css/template.css</filename>
+	</css>
+</mosinstall>
