@@ -215,7 +215,7 @@ class rsgGallery extends JObject{
 		
 		// calculate page from current position
 		$start =  floor($current  / $length) * $length;
-		return $this->array_slice_preserve_keys($this->items, $start, $length);
+		return array_slice($this->items, $start, $length, true);
 		
 	}
 
@@ -362,44 +362,6 @@ class rsgGallery extends JObject{
 		
 		return $path;
 		
-	}
-	
-	/**
-	 * array_slice with preserve_keys for every php version (taken form http://www.php.net/array_slice )
-	 *
-	 * @param array $array Input array
-	 * @param int $offset Start offset
-	 * @param int $length Length
-	 * @return array
-	 */
-	function array_slice_preserve_keys($array, $offset, $length = null)
-	{
-		// PHP >= 5.0.2 is able to do this itself
-		if(version_compare(phpversion(),"5.0.2",">="))
-			return(array_slice($array, $offset, $length, true));
-
-		// prepare input variables
-		$result = array();
-		$i = 0;
-		if($offset < 0)
-			$offset = count($array) + $offset;
-		if($length > 0)
-			$endOffset = $offset + $length;
-		else if($length < 0)
-			$endOffset = count($array) + $length;
-		else
-			$endOffset = count($array);
-	   
-		// collect elements
-		foreach($array as $key=>$value)
-		{
-			if($i >= $offset && $i < $endOffset)
-				$result[$key] = $value;
-			$i++;
-		}
-	   
-		// return
-		return($result);
 	}
 
 	function explode_assoc($glue1, $glue2, $array)
