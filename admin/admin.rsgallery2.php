@@ -10,7 +10,7 @@
 defined( '_JEXEC' ) or die( 'Access Denied.' );
 
 // initialize RSG2 core functionality
-require_once( JPATH_SITE.'/administrator/components/com_rsgallery2/init.rsgallery2.php' );
+require_once( JPATH_ADMINISTRATOR.'/components/com_rsgallery2/init.rsgallery2.php' );
 
 // instantate user variables but don't show a frontend template
 rsgInstance::instance( 'request', false );

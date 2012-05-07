@@ -14,8 +14,8 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 global $rsgConfig;
 if( !isset( $rsgConfig )){
     
-    require_once( JPATH_SITE . "/administrator/components/com_rsgallery2/includes/config.class.php" );
-    require_once( JPATH_SITE . "/administrator/components/com_rsgallery2/includes/version.rsgallery2.php" );
+    require_once( JPATH_ADMINISTRATOR . "/components/com_rsgallery2/includes/config.class.php" );
+    require_once( JPATH_ADMINISTRATOR . "/components/com_rsgallery2/includes/version.rsgallery2.php" );
 
     $rsgVersion = new rsgalleryVersion();
     $rsgConfig = new rsgConfig( false );
@@ -161,7 +161,7 @@ class rsgInstall {
     function populate_db( $sqlfile='rsgallery2.sql') {
         $database =& JFactory::getDBO();
 		
-        $sqlDir = JPATH_SITE . "/administrator/components/com_rsgallery2/sql/";
+        $sqlDir = JPATH_ADMINISTRATOR . "/components/com_rsgallery2/sql/";
         $errors = array();
     
         $query = fread( fopen( $sqlDir . $sqlfile, 'r' ), filesize( $sqlDir . $sqlfile ) );
@@ -706,11 +706,11 @@ class rsgInstall {
         if ($this->ComponentInstalled("com_rsgallery"))
             {
             //Yes, component is installed
-            $config_file = JPATH_SITE . "/administrator/components/com_rsgallery2/language/english.php";
+            $config_file = JPATH_ADMINISTRATOR . "/components/com_rsgallery2/language/english.php";
             if (file_exists($config_file))
                 {
                 //Supress notices on duplicate definitions with @, as we loaded the new english.php already
-                @include_once( JPATH_SITE . "/administrator/components/com_rsgallery2/language/english.php");
+                @include_once( JPATH_ADMINISTRATOR . "/components/com_rsgallery2/language/english.php");
                 $version = _RSGALLERY_VERSION;
                 }
             else
@@ -1167,7 +1167,7 @@ class GenericMigrator{
      */
     function runSqlFile( $sqlfile ) {
 		$database =& JFactory::getDBO();
-        $sqlDir =  JPATH_SITE . "/administrator/components/com_rsgallery2/sql/";
+        $sqlDir =  JPATH_ADMINISTRATOR . "/components/com_rsgallery2/sql/";
 
         $errors = array();
     
@@ -1420,7 +1420,7 @@ class migrate_com_akogallery extends GenericMigrator{
      */
     function migrate() {
         
-        $comconfig =  JPATH_SITE . "/administrator/components/com_akogallery/config.akogallery.php";
+        $comconfig =  JPATH_ADMINISTRATOR . "/components/com_akogallery/config.akogallery.php";
 
         if (! file_exists($comconfig))
             return ( "Config file for AKOGallery does not exist" );
@@ -1671,7 +1671,7 @@ function copyImages($basedir, $prefix = "pony_"){
     function migrate() {
 
     	//Set basedir to original images
-	    include_once(JPATH_SITE . "/administrator/components/com_ponygallery/config.ponygallery.php");
+	    include_once(JPATH_ADMINISTRATOR . "/components/com_ponygallery/config.ponygallery.php");
 	    $basedir = JPATH_SITE . $ag_pathoriginalimages . '/';
 	    
 	    //Set prefix
@@ -1730,10 +1730,10 @@ class migrate_com_zoom_251_RC4 extends GenericMigrator{
     **/
     function detect(){
         
-        $comdir =  JPATH_SITE . "/administrator/components/com_zoom";
+        $comdir =  JPATH_ADMINISTRATOR . "/components/com_zoom";
         
         if( rsgInstall::componentInstalled( "com_zoom" )){
-            include_once(JPATH_SITE . "/administrator/components/com_zoom/etc/zoom_config.php");
+            include_once(JPATH_ADMINISTRATOR . "/components/com_zoom/etc/zoom_config.php");
 
             if ( $zoomConfig['version'] == "2.5.1 RC4" ) {
             	return true;
@@ -1862,7 +1862,7 @@ class migrate_com_easygallery_10B5 extends GenericMigrator{
 	function migrate() {
 		$database = JFactory::getDBO();
 		//Set basedir from config file
-	    include_once(JPATH_SITE . "/administrator/components/com_easygallery/configuration.php");
+	    include_once(JPATH_ADMINISTRATOR . "/components/com_easygallery/configuration.php");
 	    $basedir = JPATH_SITE .$eg_original_path;
 
 	    //Set prefix

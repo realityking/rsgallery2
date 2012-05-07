@@ -138,7 +138,7 @@ class rsgDisplay extends JObject{
 		}
 		
 		echo '<pre style="text-align: left;">';
-		readfile( JPATH_SITE . '/administrator/components/com_rsgallery2/changelog.php' );
+		readfile( JPATH_ADMINISTRATOR . '/components/com_rsgallery2/changelog.php' );
 		echo '</pre>';
 	}
 	

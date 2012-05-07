@@ -194,7 +194,7 @@ function edit( $option, $id ) {
     // build the html select list
     $lists['published']         = JHTML::_("select.booleanlist", 'published', 'class="inputbox"', $row->published );
 
-    $file 	= JPATH_SITE .'/administrator/components/com_rsgallery2/options/galleries.item.xml';
+    $file 	= JPATH_ADMINISTRATOR . '/components/com_rsgallery2/options/galleries.item.xml';
     $params = new JParameter( $row->params, $file );
 
     html_rsg2_galleries::edit( $row, $lists, $params, $option );

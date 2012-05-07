@@ -17,7 +17,7 @@ function com_install(){
 	$lang =& JFactory::getLanguage();
 	$lang->load('com_rsgallery2');
 	
-	require_once( JPATH_SITE . '/administrator/components/com_rsgallery2/includes/install.class.php' );
+	require_once( JPATH_ADMINISTRATOR . '/components/com_rsgallery2/includes/install.class.php' );
 	
 	//Initialize install
 	$rsgInstall = new rsgInstall();
